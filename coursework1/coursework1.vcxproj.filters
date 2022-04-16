@@ -23,7 +23,10 @@
     <ClInclude Include="Loan.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleLoan.h">
+    <ClInclude Include="SimpleInterest.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundInterest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

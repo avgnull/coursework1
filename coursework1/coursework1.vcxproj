@@ -142,8 +142,9 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CompoundInterest.h" />
     <ClInclude Include="Loan.h" />
-    <ClInclude Include="SimpleLoan.h" />
+    <ClInclude Include="SimpleInterest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

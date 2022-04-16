@@ -1,13 +1,13 @@
 #pragma once
 #include "Loan.h"
 
-class SimpleLoan : public Loan {
+class SimpleInterest : public Loan {
 public:
-	SimpleLoan() {
+	SimpleInterest() {
 	}
-	~SimpleLoan() {
+	~SimpleInterest() {
 	}
-	SimpleLoan(long double sum, long double percent, long double months) : Loan(sum, percent, months) {
+	SimpleInterest(long double sum, long double percent, long double months) : Loan(sum, percent, months) {
 
 	}
 	long double CalculateFinalCost() {
