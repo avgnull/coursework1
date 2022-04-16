@@ -142,6 +142,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccruedInterest.h" />
     <ClInclude Include="CompoundInterest.h" />
     <ClInclude Include="Loan.h" />
     <ClInclude Include="SimpleInterest.h" />

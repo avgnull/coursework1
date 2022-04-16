@@ -29,5 +29,8 @@
     <ClInclude Include="CompoundInterest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="AccruedInterest.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
