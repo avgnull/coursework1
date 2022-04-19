@@ -35,9 +35,9 @@ public:
 	virtual long double CalculateFinalCost() {
 		return 0;
 	}
-	long double CalculateRealPercent() {
-		long double Rpercent, Fcost = this->CalculateFinalCost();
-		Rpercent = sum / Fcost;
-		return Rpercent;
+	long double CalculateDifference() {
+		long double Diff, Fcost = this->CalculateFinalCost();
+		Diff = Fcost - sum;
+		return Diff;
 	}
 };
