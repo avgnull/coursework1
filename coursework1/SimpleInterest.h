@@ -11,11 +11,11 @@ public:
 
 	}
 	long double CalculateFinalCost() {
-		long double Fcost, years, percent, sum;
-		years = LoanGetMonths() / 12.0;
-		percent = LoanGetPercent();
-		sum = LoanGetSum();
-		Fcost = sum * (1 + (years * percent));
+		long double Fcost;
+		Fcost = this->sum * (1 + ((this->months / 12.0) * this->percent));
 		return Fcost;
+	}
+	void operator +(long double sum) {
+		this->sum += sum;
 	}
 };

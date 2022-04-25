@@ -15,11 +15,10 @@ public:
 	}
 	long double CalculateFinalCost() {
 		long double Fcost, years, percent, sum, accretion;
-		accretion = this->accretion;
-		years = LoanGetMonths() / 12.0;
-		percent = LoanGetPercent();
-		sum = LoanGetSum();
-		Fcost = sum * std::pow((1 + (percent / accretion)), (years * accretion));
+		Fcost = this->sum * std::pow((1 + (this->percent / this->accretion)), ((this->months / 12) * this->accretion));
 		return Fcost;
+	}
+	void operator +(long double sum) {
+		this->sum += sum;
 	}
 };

@@ -12,11 +12,11 @@ public:
 
 	}
 	long double CalculateFinalCost() {
-		long double Fcost, years, percent, sum;
-		years = LoanGetMonths() / 12.0;
-		percent = LoanGetPercent();
-		sum = LoanGetSum();
-		Fcost = sum * std::pow((1 + percent), years);
+		long double Fcost;
+		Fcost = this->sum * std::pow((1 + this->percent), (this->months / 12.0));
 		return Fcost;
+	}
+	void operator +(long double sum) {
+		this->sum += sum;
 	}
 };

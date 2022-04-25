@@ -1,7 +1,7 @@
 #pragma once
 
 class Loan {
-private:
+protected:
 	long double sum, percent, months;
 public:
 	Loan() {
@@ -32,9 +32,10 @@ public:
 	long double LoanGetMonths() {
 		return this->months;
 	}
-	virtual long double CalculateFinalCost() {
-		return 0;
+	virtual void operator +(long double sum) {
+		this->sum += sum;
 	}
+	virtual long double CalculateFinalCost() = 0;
 	long double CalculateDifference() {
 		long double Diff, Fcost = this->CalculateFinalCost();
 		Diff = Fcost - sum;
