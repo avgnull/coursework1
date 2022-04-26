@@ -32,5 +32,8 @@
     <ClInclude Include="AccruedInterest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="ILoan.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

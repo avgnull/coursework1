@@ -51,24 +51,30 @@ int main(void) {
 		std::cout << std::endl << "--------------------------------------------------" << std::endl;
 	}
 	check = -1;
-	while (check != 0) {
+	int num = -1;
+	while ((check != 0) && (num != 0)) {
 		std::cout << std::endl;
 		std::cin >> check;
 		std::cout << std::endl;
-		int num;
 		std::cin >> num;
 		if (num <= loans.size()) {
-			num--;
 			if (check == 1) {
-				std::cout << std::endl << std::fixed << std::setprecision(2) << "Final cost: " << loans[num]->CalculateFinalCost() << "\tDifference: " << loans[num]->CalculateDifference() << std::endl;
+				std::cout << std::endl << std::fixed << std::setprecision(2) << "Final cost: " << loans[num - 1]->CalculateFinalCost() << "\tDifference: " << loans[num - 1]->CalculateDifference() << std::endl;
 			}
 			else if (check == 2) {
 				std::cout << std::endl;
 				long double change;
 				std::cin >> change;
-				std::cout << std::endl << std::endl << loans[num]->LoanGetSum() << " + " << change;
-				*loans[num] + change;
-				std::cout << " = " << loans[num]->LoanGetSum() << std::endl;
+				std::cout << std::endl << std::endl << loans[num - 1]->LoanGetSum() << " + " << change;
+				*loans[num - 1] + change;
+				std::cout << " = " << loans[num - 1]->LoanGetSum() << std::endl;
+			}
+			else if (check == 3) {
+				std::cout << std::endl;
+				long double sum;
+				std::cin >> sum;
+				std::cout << std::endl << std::endl << loans[num - 1]->LoanGetSum() << " - " << sum;
+				std::cout << " = " << loans[num - 1]->CalculateDifference(sum) << std::endl;
 			}
 			else {
 				std::cout << std::endl << std::endl << "Wrong number! there are only 2 actions (only 1 and 2) acceptable. Try again." << std::endl;
@@ -77,8 +83,11 @@ int main(void) {
 		else if (num >= 1) {
 			std::cout << std::endl << std::endl << "Wrong number! massive is not that big. Try again (with inputing action too)." << std::endl;
 		}
-		else {
+		else if (num < 0) {
 			std::cout << std::endl << std::endl << "Wrong number! input must be 1 or above. Try again (with inputing action too)." << std::endl;
+		}
+		else if (check != 0) {
+			std::cout << std::endl << std::endl << "Wrong number! Action can be 1,2 or 3. Try again (with inputing number in massive too)." << std::endl;
 		}
 	}
 	return 0;

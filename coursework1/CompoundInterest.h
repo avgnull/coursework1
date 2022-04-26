@@ -16,7 +16,4 @@ public:
 		Fcost = this->sum * std::pow((1 + this->percent), (this->months / 12.0));
 		return Fcost;
 	}
-	void operator +(long double sum) {
-		this->sum += sum;
-	}
 };

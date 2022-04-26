@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="AccruedInterest.h" />
     <ClInclude Include="CompoundInterest.h" />
+    <ClInclude Include="ILoan.h" />
     <ClInclude Include="Loan.h" />
     <ClInclude Include="SimpleInterest.h" />
   </ItemGroup>

@@ -1,6 +1,8 @@
 #pragma once
+#include "ILoan.h"
 
-class Loan {
+//base class
+class Loan : public ILoan {
 protected:
 	long double sum, percent, months;
 public:
@@ -32,13 +34,20 @@ public:
 	long double LoanGetMonths() {
 		return this->months;
 	}
-	virtual void operator +(long double sum) {
+	void operator +(long double sum) {
 		this->sum += sum;
 	}
-	virtual long double CalculateFinalCost() = 0;
 	long double CalculateDifference() {
 		long double Diff, Fcost = this->CalculateFinalCost();
+		Diff = Fcost - this->sum;
+		return Diff;
+	}
+	long double CalculateDifference(long double sum) {
+		long double Diff, Fcost = this->CalculateFinalCost();
 		Diff = Fcost - sum;
+		if (Diff < 0) {
+			Diff = Diff * (-1);
+		}
 		return Diff;
 	}
 };
