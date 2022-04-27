@@ -77,14 +77,14 @@ int main(void) {
 				std::cout << " = " << loans[num - 1]->CalculateDifference(sum) << std::endl;
 			}
 			else {
-				std::cout << std::endl << std::endl << "Wrong number! there are only 2 actions (only 1 and 2) acceptable. Try again." << std::endl;
+				std::cout << std::endl << std::endl << "Wrong number! Action can be 1,2 or 3. Try again (with inputing number in massive too)." << std::endl;
 			}
 		}
 		else if (num >= 1) {
-			std::cout << std::endl << std::endl << "Wrong number! massive is not that big. Try again (with inputing action too)." << std::endl;
+			std::cout << std::endl << std::endl << "Wrong number! Massive is not that big. Try again (with inputing action too)." << std::endl;
 		}
 		else if (num < 0) {
-			std::cout << std::endl << std::endl << "Wrong number! input must be 1 or above. Try again (with inputing action too)." << std::endl;
+			std::cout << std::endl << std::endl << "Wrong number! Input must be 1 or above. Try again (with inputing action too)." << std::endl;
 		}
 		else if (check != 0) {
 			std::cout << std::endl << std::endl << "Wrong number! Action can be 1,2 or 3. Try again (with inputing number in massive too)." << std::endl;
