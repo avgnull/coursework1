@@ -6,7 +6,6 @@
 #include "CompoundInterest.h"
 #include "AccruedInterest.h"
 
-//std::cout << std::fixed << std::setprecision(2) << "Final cost: " << l->CalculateFinalCost() << "\tDifference: " << l->CalculateDifference();
 int main(void) {
 	std::vector<SimpleInterest> Sl;
 	std::vector<CompoundInterest> Cl;
@@ -52,42 +51,39 @@ int main(void) {
 	}
 	check = -1;
 	int num = -1;
-	while ((check != 0) && (num != 0)) {
+	while (check != 0) {
 		std::cout << std::endl;
 		std::cin >> check;
 		std::cout << std::endl;
 		std::cin >> num;
-		if (num <= loans.size()) {
+		if (num <= (loans.size() - 1)) {
 			if (check == 1) {
-				std::cout << std::endl << std::fixed << std::setprecision(2) << "Final cost: " << loans[num - 1]->CalculateFinalCost() << "\tDifference: " << loans[num - 1]->CalculateDifference() << std::endl;
+				std::cout << std::endl << std::fixed << std::setprecision(2) << "Final cost: " << loans[num]->CalculateFinalCost() << "\tDifference: " << loans[num]->CalculateDifference() << std::endl;
 			}
 			else if (check == 2) {
 				std::cout << std::endl;
 				long double change;
 				std::cin >> change;
-				std::cout << std::endl << std::endl << loans[num - 1]->LoanGetSum() << " + " << change;
-				*loans[num - 1] + change;
-				std::cout << " = " << loans[num - 1]->LoanGetSum() << std::endl;
+				std::cout << std::endl << std::endl << loans[num]->LoanGetSum() << " + " << change;
+				*loans[num] + change;
+				std::cout << " = " << loans[num]->LoanGetSum() << std::endl;
 			}
 			else if (check == 3) {
 				std::cout << std::endl;
 				long double sum;
 				std::cin >> sum;
-				std::cout << std::endl << std::endl << loans[num - 1]->LoanGetSum() << " - " << sum;
-				std::cout << " = " << loans[num - 1]->CalculateDifference(sum) << std::endl;
+				std::cout << std::endl << std::endl << loans[num]->CalculateFinalCost() << " - " << sum;
+				std::cout << " = " << loans[num]->CalculateDifference(sum) << std::endl;
 			}
 			else {
 				std::cout << std::endl << std::endl << "Wrong number! Action can be 1,2 or 3. Try again (with inputing number in massive too)." << std::endl;
 			}
 		}
-		else if (num >= 1) {
+		else if (num >= 0) {
 			std::cout << std::endl << std::endl << "Wrong number! Massive is not that big. Try again (with inputing action too)." << std::endl;
 		}
-		else if (num < 0) {
-			std::cout << std::endl << std::endl << "Wrong number! Input must be 1 or above. Try again (with inputing action too)." << std::endl;
-		}
-		else if (check != 0) {
-			std::cout << std::endl << std::endl << "Wrong number! Action can be 1,2 or 3. Try again (with inputing number in massive too)." << std::endl;
+		else if (num <= -1) {
+			std::cout << std::endl << std::endl << "Wrong number! Input must be 0 or above. Try again (with inputing action too)." << std::endl;
 		}
 	}
 	return 0;
